@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus LVM Exporter
+After=network.target
+
+[Service]
+Type=simple
+# The exporter typically listens on :9845
+ExecStart=/usr/bin/prometheus-lvm-exporter
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
